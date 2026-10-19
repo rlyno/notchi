@@ -1,283 +1,192 @@
-# Notchi
+<p align="center">
+  <img src="gambar/ikon.png" alt="Ikon Notchi" width="128">
+</p>
 
-**Notch MacBook Anda jadi pusat kendali.** Satu panel yang turun dari notch —
-diintip saat kursor lewat, dibuka saat diklik atau ditekan `⌥⌘N` — berisi
-hal-hal yang biasanya tersebar di banyak aplikasi kecil: musik yang sedang
-diputar, acara hari ini, perapian folder yang berantakan, penataan menu bar,
-pemantauan suhu, dan banyak lagi.
+<h1 align="center">Notchi</h1>
 
-Di Mac tanpa notch, panelnya muncul sebagai pil mengambang di tengah atas layar.
-Perilakunya sama persis.
+<p align="center">
+  Notch MacBook Anda jadi pusat kendali. Satu panel yang turun dari notch, berisi
+  musik, acara hari ini, perapian folder, suhu, sistem, timer, dan banyak lagi.
+</p>
 
-> **Versi 0.9.5 — pra-rilis.** Bisa dipakai sehari-hari. Yang belum ada
-> disebutkan apa adanya di bawah.
+<p align="center">
+  <a href="https://github.com/rlyno/notchi/releases/latest"><b>Unduh versi terbaru</b></a>
+  &nbsp;·&nbsp; macOS 26 atau lebih baru &nbsp;·&nbsp; Apple Silicon & Intel &nbsp;·&nbsp; Gratis
+</p>
+
+**Semuanya berjalan di Mac Anda.** Tanpa akun, tanpa telemetri, tanpa iklan. Notchi tidak
+menyentuh jaringan kecuali Anda sendiri yang menyalakan pemeriksa versi atau Cuaca.
+
+<p align="center">
+  <img src="gambar/02-dashboard.png" alt="Modul Dashboard" width="49%">
+  <img src="gambar/07-sistem.png" alt="Modul Sistem" width="49%">
+  <img src="gambar/06-sensor.png" alt="Modul Sensor" width="49%">
+  <img src="gambar/08-fokus.png" alt="Modul Fokus" width="49%">
+</p>
+
+## Unduh
+
+1. Unduh `Notchi.dmg` dari [halaman rilis terbaru](https://github.com/rlyno/notchi/releases/latest).
+2. Buka `.dmg`, lalu seret **Notchi** ke folder **Applications**.
+3. Buka **Terminal**, salin-tempel baris ini, lalu tekan Enter:
+
+   ```bash
+   xattr -rd com.apple.quarantine /Applications/Notchi.app
+   ```
+
+4. Buka Notchi. Panelnya muncul di notch — tekan `⌥⌘N` atau klik notch untuk membukanya.
+
+Langkah 3 sifatnya **sementara**: ia menghapus tanda *quarantine* yang dipasang macOS pada
+aplikasi unduhan. Tidak mau menyentuh Terminal? Lewati langkah itu, buka Notchi, lalu saat macOS
+menolaknya buka **System Settings → Privacy & Security** dan tekan **Open Anyway**.
+
+Mulai 1.1, memperbarui jauh lebih mudah: nyalakan pemeriksaan versi di **Pengaturan → Umum**, dan
+saat versi baru ada tekan **Unduh & pasang**. Izin dan setelan Anda tetap utuh.
+
+Pemakai macOS 14 dan 15 berhenti di [0.9.3](https://github.com/rlyno/notchi/releases/tag/v0.9.3),
+yang tetap tersedia.
+
+## Yang bisa dilakukan
+
+| | |
+| --- | --- |
+| **Panel notch** | Diintip saat kursor lewat, dibuka dengan klik, `⌥⌘N`, atau usapan dua jari ke bawah. Di Mac tanpa notch ia jadi pil mengambang di tengah atas layar |
+| **Notch yang diam** | Mengabarkan satu hal pada satu waktu: lagu yang diputar (berwarna sampulnya), sisa waktu Pomodoro, kabel daya yang dicolok, kamera atau mikrofon yang sedang dipakai, headphone Bluetooth yang baru tersambung, perubahan volume, dan unduhan yang selesai |
+| **Dashboard** | Kisi kartu dengan empat profil — Cepat, Kerja, Pribadi, Fokus — berisi musik, acara, pintasan, dan sakelar cepat |
+| **Hari Ini** | Garis waktu satu jalur: acara, pengingat, tugas, dan penanda tidur |
+| **Rapikan** | Pindai folder yang berantakan, tinjau rencananya, rapikan, dan batalkan kapan saja |
+| **Sensor & Sistem** | Suhu tiap sensor dan RPM kipas; CPU, GPU, memori, penyimpanan, jaringan, kesehatan baterai, dan lima proses terberat |
+| **Fokus** | Pomodoro, stopwatch dengan putaran, dan alarm jam yang bisa diketik waktunya |
+| **Papan Klip & Rak** | Riwayat salinan, dan rak tempat berkas yang dijatuhkan ke notch menunggu diseret keluar lagi |
+| **Bluetooth** | Perangkat yang dipasangkan beserta baterainya |
+| **Menu Bar** | Menyembunyikan dan menata item menu bar (di macOS 27 fitur ini diurus macOS sendiri) |
+
+Tiap modul bisa dimatikan dan diurutkan ulang di **Pengaturan → Modul**. Panelnya bisa
+**disematkan** (`⌥⌘P`) supaya tetap terbuka, atau **ditidurkan** (`⌥⌘S`) saat sedang mengganggu.
+
+Setelan opsional di **Pengaturan → Notch**, semuanya mati sampai Anda nyalakan: **warna panel**,
+**cermin kamera** untuk berkaca sebelum rapat, **perubahan volume** di notch (bisa juga
+menggantikan indikator volume macOS), dan **unduhan selesai**.
+
+<details>
+<summary><b>Tampilan tiap modul</b></summary>
+
+<br>
+
+Tangkapan dari versi 0.9.5; tampilan 1.1 sedikit berbeda (misalnya baris GPU di modul Sistem).
+
+**Notch yang diam** — terlihat seperti notch asli.
 
 <img src="gambar/01-diam.png" width="240" alt="Panel dalam keadaan diam, terlihat seperti notch asli">
 
----
+**Dashboard**
 
-## Isi panel
+<img src="gambar/02-dashboard.png" width="720" alt="Modul Dashboard pada profil Cepat">
 
-Ikon modul berderet di tepi bawah panel. Di **Pengaturan → Modul** tiap modul
-bisa dimatikan — modul mati hilang dari deretan, bukan tampil kosong — dan
-urutannya bisa diseret.
+**Hari Ini**
 
-| Modul | Isi |
-|---|---|
-| **Dashboard** | Kisi delapan kartu dengan empat profil: musik, acara, Hari Ini, Rapikan, Sistem, Fokus, Pintasan, Sakelar Cepat |
-| **Hari Ini** | Garis waktu satu jalur: acara, pengingat, tugas, dan penanda tidur |
-| **Rapikan** | Pindai, tinjau, rapikan, batalkan — seluruh alur perapian folder |
-| **Menu Bar** | Menyembunyikan dan menata item menu bar |
-| **Sensor** | Suhu tiap sensor, sparkline, keadaan termal mesin, dan RPM tiap kipas bila ada |
-| **Sistem** | CPU, memori, penyimpanan, laju jaringan, dan baterai |
-| **Fokus** | Tiga mode waktu: Pomodoro berputaran, stopwatch dengan putaran, alarm jam yang berulang |
-| **Papan Klip** | Riwayat salinan — perekamannya mati sampai Anda menyalakannya |
-| **Rak** | Jatuhkan berkas ke notch, seret keluar lagi saat dibutuhkan |
-| **Bluetooth** | Perangkat yang dipasangkan dan baterainya — tanpa izin apa pun |
+<img src="gambar/03-hari-ini.png" width="720" alt="Modul Hari Ini: garis waktu berisi tugas dan penanda waktu tidur">
 
-Ditambah kartu **Cuaca** di Dashboard (mati secara bawaan; lihat di bawah).
+**Rapikan**
 
-Dashboard punya empat profil — **Cepat, Kerja, Pribadi, Fokus** — yang mengganti
-seluruh susunan kartu sekaligus dari deretan di kepala kisi. Kartu tiap profil
-disusun di **Pengaturan → Dashboard**.
+<img src="gambar/04-rapikan.png" width="720" alt="Modul Rapikan: berkas lepas di Downloads">
 
-**Menjatuhkan berkas ke notch** menyimpannya di Rak: panel membuka sendiri
-begitu jatuhan menyentuhnya, dan tepinya menyala selama berkas melayang di atas.
-Yang disimpan **jalurnya**, bukan salinan — menjatuhkan video 4 GB tidak
-menggandakannya. Menyeret keluar menyalin; di **Pengaturan → Rak** ia bisa
-diubah jadi memindahkan. Klik kanan satu berkas untuk Buka dengan, Ekstrak,
-Ubah format, atau Bagikan lewat AirDrop.
+**Menu Bar**
 
-**Cuaca** ada sebagai kartu Dashboard dan **mati secara bawaan**: sumbernya
-Open-Meteo, tanpa kunci API dan tanpa akun; yang dikirim hanya koordinat, tiga
-puluh menit sekali, dan hanya saat panel sedang terbuka. Mengetik nama kota
-tidak menuntut izin apa pun — lokasi otomatis menuntut izin Lokasi, dan karena
-itu bukan yang bawaan.
+<img src="gambar/05-menu-bar.png" width="720" alt="Modul Menu Bar dengan pemisah yang bisa digeser">
 
-Ukuran panel diatur di **Pengaturan → Tata Letak** (560–1200 pt lebar,
-200–460 pt tinggi). Kisi kartu Dashboard mengikuti lebar itu: dua kolom pada
-ukuran bawaan, tiga bila panel dilebarkan, satu bila disempitkan.
+**Sensor**
 
-Panel punya tiga keadaan: **diam** (terlihat seperti notch asli, hanya indikator
-tipis bila ada berkas menunggu), **intip** (melebar saat kursor masuk area
-notch, berisi baris ringkas), dan **terbuka** (panel penuh dengan modul).
+<img src="gambar/06-sensor.png" width="720" alt="Modul Sensor: suhu tertinggi, sparkline, dan RPM kipas">
 
-Panel bisa **disematkan** (⌥⌘P) supaya tetap terbuka, dan **ditidurkan** (⌥⌘S)
-saat sedang mengganggu — tidur selalu berakhir sendiri setelah waktu yang Anda
-pilih.
+**Sistem**
 
-### Tampilan tiap modul
+<img src="gambar/07-sistem.png" width="720" alt="Modul Sistem: CPU, memori, penyimpanan, jaringan, dan baterai">
 
-Semua tangkapan di bawah dari versi 0.9.5.
+**Fokus**
 
-**Dashboard** — kisi kartu, dengan deretan profil di kepalanya.
+<img src="gambar/08-fokus.png" width="720" alt="Modul Fokus pada mode Pomodoro">
 
-<img src="gambar/02-dashboard.png" width="720" alt="Modul Dashboard pada profil Cepat: kartu Pintasan dan Sakelar Cepat">
+**Papan Klip**
 
-**Hari Ini** — garis waktu satu jalur berisi acara, tugas, dan penanda tidur.
+<img src="gambar/09-papan-klip.png" width="720" alt="Modul Papan Klip">
 
-<img src="gambar/03-hari-ini.png" width="720" alt="Modul Hari Ini: garis waktu berisi tiga tugas dan penanda waktu tidur">
+**Rak**
 
-**Rapikan** — folder yang dipantau, dan berkas lepas yang menunggu dirapikan.
+<img src="gambar/10-rak.png" width="720" alt="Modul Rak">
 
-<img src="gambar/04-rapikan.png" width="720" alt="Modul Rapikan: 30 berkas lepas di Downloads, dengan tombol Pindai dan Rapikan Sekarang">
+**Bluetooth**
 
-**Menu Bar** — batas antara item yang terlihat dan yang disembunyikan, digeser dengan sekali klik.
+<img src="gambar/11-bluetooth.png" width="720" alt="Modul Bluetooth">
 
-<img src="gambar/05-menu-bar.png" width="720" alt="Modul Menu Bar: 15 item terbaca, 9 akan disembunyikan, dengan pemisah biru yang bisa digeser">
+**Pengaturan → Modul**
 
-**Sensor** — suhu tiap sensor, keadaan termal mesin, dan RPM tiap kipas.
+<img src="gambar/12-pengaturan.png" width="720" alt="Jendela Pengaturan halaman Modul">
 
-<img src="gambar/06-sensor.png" width="720" alt="Modul Sensor: suhu tertinggi 68 derajat, sparkline, dan RPM dua kipas">
-
-**Sistem** — CPU, memori, penyimpanan, laju jaringan, dan baterai.
-
-<img src="gambar/07-sistem.png" width="720" alt="Modul Sistem: pemakaian CPU, memori, penyimpanan, laju jaringan, dan baterai">
-
-**Fokus** — tiga mode waktu; Pomodoro, stopwatch, dan alarm jam.
-
-<img src="gambar/08-fokus.png" width="720" alt="Modul Fokus pada mode Pomodoro, dengan pemilih tiga mode di atasnya">
-
-**Papan Klip** — riwayat salinan; perekamannya mati sampai Anda menyalakannya sendiri.
-
-<img src="gambar/09-papan-klip.png" width="720" alt="Modul Papan Klip dalam keadaan bawaan: belum ada yang disalin">
-
-**Rak** — berkas yang dijatuhkan ke notch, menunggu diseret ke tempat lain.
-
-<img src="gambar/10-rak.png" width="720" alt="Modul Rak dalam keadaan kosong">
-
-**Bluetooth** — perangkat yang dipasangkan dan baterainya, tanpa izin apa pun.
-
-<img src="gambar/11-bluetooth.png" width="720" alt="Modul Bluetooth: dua perangkat yang dipasangkan tapi sedang tidak tersambung">
-
-Tiap modul bisa dimatikan dan diurutkan ulang di **Pengaturan → Modul**:
-
-<img src="gambar/12-pengaturan.png" width="720" alt="Jendela Pengaturan halaman Modul: daftar sepuluh modul dengan centang dan pegangan seret">
-
----
-
-## Pemasangan
-
-**Syarat:** macOS 26 atau lebih baru. Apple Silicon dan Intel.
-
-Pemakai macOS 14 (Sonoma) dan 15 (Sequoia) berhenti di
-[0.9.3](https://github.com/rlyno/notchi/releases/tag/v0.9.3), yang tetap
-tersedia dan tetap berfungsi.
-
-> **Langkah 3 di bawah sifatnya sementara.** Begitu Notchi mengantongi lisensi
-> developer resmi Apple, pemasangannya jadi seperti aplikasi kebanyakan: seret
-> ke Applications, buka, sudah.
-
-> **Jangan buka Notchi sebelum langkah 1–4 selesai.**
-
-**1.** Unduh `Notchi.dmg` dari [halaman Releases](https://github.com/rlyno/notchi/releases).
-
-**2.** Buka `.dmg`, seret **Notchi.app** ke folder **Applications**.
-
-**3.** Buka **Terminal**, salin-tempel baris ini, lalu tekan Enter:
-
-```bash
-xattr -rd com.apple.quarantine /Applications/Notchi.app
-```
-
-**4.** Buka Notchi. Selesai — sekarang ia terbuka seperti aplikasi lain.
-
-**Kenapa perlu langkah 3.** Berkas yang diunduh dari internet ditandai
-*quarantine* oleh macOS, dan aplikasi bertanda itu ditahan saat pertama dibuka.
-Perintah tadi menghapus penandanya.
-
-> **Tidak mau menyentuh Terminal?** Lewati langkah 3, buka Notchi, lalu saat
-> macOS menolaknya buka **System Settings → Privacy & Security** dan tekan
-> **Open Anyway**.
-
-### Setelah memperbarui Notchi
-
-Unduh `.dmg` baru, seret ke Applications, timpa yang lama. **Ulangi langkah 3** —
-berkas yang baru diunduh ditandai *quarantine* lagi.
-
-Yang **tidak** perlu diulang: izin yang pernah Anda berikan (Kalender,
-Automation, Screen Recording, Accessibility, Lokasi) tetap berlaku, begitu juga
-setelan, kategori, dan daftar folder Anda.
-
-### Penyiapan awal
-
-Notchi hidup di latar sebagai agen menu bar — tidak ada ikon Dock. Setelah
-dibuka pertama kali:
-
-1. Panel muncul di notch. Tekan `⌥⌘N` atau klik notch untuk membukanya.
-2. Buka **Pengaturan** lewat ikon gerigi di kanan atas panel.
-3. Di **Pengaturan → Kategori**, pilih satu set kategori (Umum, Pelajar &
-   Mahasiswa, atau Freelancer & Kreatif) supaya perapian tahu harus menaruh
-   berkas ke mana.
-4. Di **Pengaturan → Modul**, matikan modul yang tidak Anda pakai.
-
-Semua perapian bisa dibatalkan lewat tombol *Batalkan*.
-
----
+</details>
 
 ## Izin
 
-Notchi meminta izin **hanya saat fiturnya dipakai**, tidak pernah saat
-peluncuran. Semuanya bisa ditolak; yang mati hanya bagian itu.
+Notchi meminta izin **hanya saat fiturnya dipakai**, tidak pernah saat dibuka pertama kali.
+Semuanya bisa ditolak; yang mati hanya bagian itu.
 
 | Izin | Untuk apa | Kapan diminta |
-|---|---|---|
-| Akses folder | Membaca dan merapikan folder pilihan Anda | Saat folder ditambahkan |
-| Automation (Music/Spotify) | Mengendalikan Music atau Spotify | Saat sumber musik dipatok di Pengaturan |
-| Kalender | Menampilkan acara hari ini | Saat Anda menekan *Izinkan Kalender* |
-| Screen Recording | Menggambar item menu bar yang tersembunyi (Ice Bar) | Saat Anda menyalakan Ice Bar |
-| Accessibility | Menggeser item menu bar milik aplikasi lain | Saat Anda menekan *Izinkan Susun Ulang…* |
+| --- | --- | --- |
+| Akses folder | Membaca dan merapikan folder pilihan Anda, dan mengabarkan unduhan selesai | Saat folder ditambahkan, atau kabar unduhan dinyalakan |
+| Kalender & Pengingat | Acara dan pengingat hari ini | Saat Anda menekan tombol izinnya |
+| Kamera | Cermin kamera — hanya pratinjau, tidak ada yang direkam | Saat tombol kamera pertama ditekan |
+| Accessibility | Menggantikan indikator volume macOS; menggeser item menu bar | Saat fitur itu dinyalakan |
+| Automation (Music/Spotify) | Mengendalikan pemutar musik | Saat sumber musik dipatok di Pengaturan |
+| Screen Recording | Menggambar item menu bar yang tersembunyi (Ice Bar) | Saat Ice Bar dinyalakan |
+| Lokasi | Cuaca otomatis | Saat lokasi otomatis dipilih |
 
-**Yang tidak butuh izin sama sekali:** panel notch dan hotkey `⌥⌘N`, membaca
-suhu dan RPM kipas, membaca daftar item menu bar, menyembunyikan item lewat
-pemisah, modul Bluetooth, dan modul Sistem.
+**Tanpa izin sama sekali:** panel dan `⌥⌘N`, suhu dan kipas, modul Sistem dan Bluetooth, dan
+seluruh kabar di notch yang diam selain unduhan — kabel daya, kamera atau mikrofon yang sedang
+dipakai aplikasi lain, headphone yang tersambung, dan perubahan volume.
 
-> **Catatan Screen Recording.** macOS baru menerapkan izin ini setelah aplikasi
-> dijalankan ulang. Beri izinnya di System Settings, **keluar dari Notchi, lalu
-> buka lagi** — kalau tidak, Ice Bar tetap melaporkan izin belum ada meski
-> daftarnya sudah tercentang.
+## Baik diketahui
 
-Notchi tidak menyentuh jaringan kecuali Anda menyalakan pemeriksaan versi baru
-di **Pengaturan → Umum** atau mengaktifkan Cuaca. Tidak ada telemetri, tidak
-ada akun.
+- **Mengatur RPM kipas belum bisa dari panel.** Daemon kipasnya lengkap dan teruji, tapi belum
+  ada tombol yang memanggilnya.
+- **Nama sensor di Apple Silicon sebagian masih mentah** (`Tg05`, `TCMz`, …). Nama baru dipasang
+  setelah ada bukti pembandingan sungguhan, bukan tebakan.
+- **Modul Menu Bar** bergantung pada perilaku macOS yang tidak dijamin stabil antar versi, dan
+  susun ulang item tidak berhasil pada semua aplikasi.
+- **Belum dinotarisasi**, karena itu ada langkah 3 di bagian Unduh.
 
----
+<details>
+<summary><b>Kontrol kipas</b></summary>
 
-## Kontrol kipas
+<br>
 
-Dua jalur pemasangan, dan keduanya berujung pada daemon yang sama:
+Daemon kipas dipasang dengan:
 
-| Jalur | Syarat | Untuk siapa |
-|---|---|---|
-| `sudo …/Contents/Resources/install-helper.sh` | tidak ada | semua Mac — termasuk rilis gratis |
-| `SMAppService` dari dalam aplikasi | sertifikat Developer ID berbayar | distribusi dengan tanda tangan penuh |
+```bash
+sudo /Applications/Notchi.app/Contents/Resources/install-helper.sh
+```
 
-Dengan pemasangan manual, daemon memeriksa **cdhash** yang direkam saat
-pemasangan — terikat ke satu salinan aplikasi. Konsekuensinya: setiap kali
-aplikasi diperbarui (cdhash-nya berubah), jalankan lagi
-`sudo …/Contents/Resources/install-helper.sh`. Pencopotan:
-`sudo …/Contents/Resources/uninstall-helper.sh`.
+Daemon memeriksa sidik salinan aplikasi yang dipasang, jadi jalankan lagi perintah itu setiap
+kali Notchi diperbarui. Mencopotnya: `sudo …/Contents/Resources/uninstall-helper.sh`.
 
-> **Antarmuka kontrol kipas belum ada** — daemonnya lengkap dan teruji, tapi
-> belum ada tombol yang memanggilnya. Lihat bagian *Yang belum ada*.
-
----
-
-## Yang belum ada
-
-Disebut di sini supaya tidak ada yang memasang lalu mencarinya:
-
-- **Mengatur RPM kipas belum bisa.** Daemon kipas lengkap dan teruji, tapi
-  belum ada antarmuka yang memanggilnya. Mengubah putaran kipas masih harus
-  dilakukan dari Terminal.
-- **Kurva kipas berbasis sensor** (kipas mengikuti satu sensor) belum ada.
-- **Nama sensor di Apple Silicon sebagian masih mentah** (`Tg05`, `TCMz`, …).
-  Peta nama yang beredar di internet terbukti salah di mesin uji — satu kunci
-  yang katanya GPU membaca 9 °C saat mesin sibuk. Nama baru dipasang setelah
-  ada bukti pembandingan sungguhan, bukan tebakan.
-- **Belum dinotarisasi**, karena itu ada langkah 3 di bagian Pemasangan.
-
-## Diketahui bermasalah
-
-- Modul menu bar bergantung pada perilaku macOS yang tidak dijamin stabil antar
-  versi. Bila setelah pembaruan macOS item tidak lagi terbaca, laporkan lewat
-  Issues.
-- Susun ulang item menu bar butuh Accessibility dan tidak berhasil pada semua
-  aplikasi — sebagian item menolak digeser.
-
----
-
-## Pembaruan
-
-Notchi bisa memeriksa versi baru sekali sehari lewat halaman Releases ini.
-**Mati secara bawaan** — nyalakan di **Pengaturan → Umum**. Pemeriksaannya hanya
-membaca; tidak ada yang terpasang sendiri. Unduhan versi baru tetap Anda yang
-memutuskan.
+</details>
 
 ## Mencopot
 
-Seret **Notchi.app** ke Trash. Setelan tersimpan di `~/Library/Preferences` dan
-`~/Library/Application Support/Notchi` — hapus kalau ingin bersih total.
-
-Folder yang sudah dirapikan **tidak berubah** saat aplikasi dicopot; berkasnya
-tetap di tempat barunya.
-
----
+Seret **Notchi** ke Trash. Setelan tersimpan di `~/Library/Preferences` dan
+`~/Library/Application Support/Notchi` — hapus kalau ingin bersih total. Folder yang sudah
+dirapikan tidak berubah; berkasnya tetap di tempat barunya.
 
 ## Umpan balik
 
-Laporan galat dan usulan lewat [Issues](https://github.com/rlyno/notchi/issues).
-Sertakan versi macOS, model Mac, dan versi Notchi (ada di Pengaturan → Umum).
+Laporan galat dan usulan lewat [Issues](https://github.com/rlyno/notchi/issues). Sertakan versi
+macOS, model Mac, dan versi Notchi (ada di **Pengaturan → Umum**).
 
 ## Lisensi
 
-Notchi adalah **freeware** — gratis dipakai, termasuk untuk keperluan komersial.
-Kode sumbernya tertutup dan tidak dipublikasikan. Repositori ini hanya berisi
-halaman unduhan, dokumentasi, dan pelacak isu.
+Notchi adalah **freeware** — gratis dipakai, termasuk untuk keperluan komersial. Kode sumbernya
+tertutup; repositori ini hanya berisi halaman unduhan, dokumentasi, dan pelacak isu.
 
-Notchi ditulis dari nol. Ice dan boring.notch dipakai sebagai **referensi
-perilaku** saja — tidak ada baris kode dari keduanya yang disalin, sehingga
-Notchi tidak terikat GPL. Lapisan SMC-nya (pembacaan suhu dan kipas) ditulis
-sendiri lewat IOKit.
+Notchi ditulis dari nol. Ice dan boring.notch dipakai sebagai **referensi perilaku** saja — tidak
+ada baris kode dari keduanya yang disalin.
 
 © 2026 RLYNO
