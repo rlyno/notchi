@@ -74,7 +74,7 @@ menggantikan indikator volume macOS), dan **unduhan selesai**.
 
 <br>
 
-Tangkapan dari versi 1.1, diambil dengan data contoh. Modul Menu Bar masih dari 0.9.5.
+Tangkapan dari versi 1.1, diambil dengan data contoh.
 
 **Notch yang diam** — terlihat seperti notch asli, dan mengabarkan satu hal pada satu waktu. Di sini: Pomodoro yang berjalan.
 
@@ -92,9 +92,9 @@ Tangkapan dari versi 1.1, diambil dengan data contoh. Modul Menu Bar masih dari 
 
 <img src="gambar/04-rapikan.png" width="720" alt="Modul Rapikan: berkas lepas di Downloads">
 
-**Menu Bar**
+**Menu Bar** — tampilan di macOS 26; di macOS 27 menu bar diurus macOS sendiri.
 
-<img src="gambar/05-menu-bar.png" width="720" alt="Modul Menu Bar dengan pemisah yang bisa digeser">
+<img src="gambar/05-menu-bar.png" width="720" alt="Modul Menu Bar: delapan item di kiri pemisah akan disembunyikan, empat di kanan tetap terlihat">
 
 **Sensor**
 
