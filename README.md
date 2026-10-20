@@ -18,6 +18,7 @@
 menyentuh jaringan kecuali Anda sendiri yang menyalakan pemeriksa versi atau Cuaca.
 
 <p align="center">
+  <img src="gambar/01-sayap-timer.png" alt="Notch yang diam dengan sisa waktu Pomodoro di samping kamera" width="98%">
   <img src="gambar/02-dashboard.png" alt="Modul Dashboard" width="49%">
   <img src="gambar/07-sistem.png" alt="Modul Sistem" width="49%">
   <img src="gambar/06-sensor.png" alt="Modul Sensor" width="49%">
@@ -73,11 +74,11 @@ menggantikan indikator volume macOS), dan **unduhan selesai**.
 
 <br>
 
-Tangkapan dari versi 0.9.5; tampilan 1.1 sedikit berbeda (misalnya baris GPU di modul Sistem).
+Tangkapan dari versi 1.1, diambil dengan data contoh. Modul Menu Bar masih dari 0.9.5.
 
-**Notch yang diam** — terlihat seperti notch asli.
+**Notch yang diam** — terlihat seperti notch asli, dan mengabarkan satu hal pada satu waktu. Di sini: Pomodoro yang berjalan.
 
-<img src="gambar/01-diam.png" width="240" alt="Panel dalam keadaan diam, terlihat seperti notch asli">
+<img src="gambar/01-sayap-timer.png" width="400" alt="Notch yang diam dengan sayap Pomodoro: lambang timer oranye di kiri kamera, sisa waktu di kanan">
 
 **Dashboard**
 
