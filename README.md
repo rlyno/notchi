@@ -52,7 +52,7 @@ yang tetap tersedia.
 | | |
 | --- | --- |
 | **Panel notch** | Diintip saat kursor lewat, dibuka dengan klik, `⌥⌘N`, atau usapan dua jari ke bawah. Di Mac tanpa notch ia jadi pil mengambang di tengah atas layar |
-| **Notch yang diam** | Mengabarkan satu hal pada satu waktu: lagu yang diputar (berwarna sampulnya), sisa waktu Pomodoro, kabel daya yang dicolok, kamera atau mikrofon yang sedang dipakai, headphone Bluetooth yang baru tersambung, perubahan volume, dan unduhan yang selesai |
+| **Notch yang diam** | Mengabarkan satu hal pada satu waktu: lagu yang diputar (berwarna sampulnya), sisa waktu Pomodoro, kabel daya yang dicolok, kamera atau mikrofon yang sedang dipakai, headphone Bluetooth yang baru tersambung, perubahan volume, dan unduhan yang selesai. Saat tidak mengabarkan apa pun, ia tersembunyi di balik notch — tidak ikut terpotret, dan tidak ikut meluncur saat Desktop digeser |
 | **Dashboard** | Kisi kartu dengan empat profil — Cepat, Kerja, Pribadi, Fokus — berisi musik, acara, pintasan, dan sakelar cepat |
 | **Hari Ini** | Garis waktu satu jalur: acara, pengingat, tugas, dan penanda tidur |
 | **Rapikan** | Pindai folder yang berantakan, tinjau rencananya, rapikan, dan batalkan kapan saja |
